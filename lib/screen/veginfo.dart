@@ -33,7 +33,7 @@ class Veginfo extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(25),
                       topRight: Radius.circular(25)),
-                  color: Colors.white,
+                  color: Color(0xFFF6F5F5),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
@@ -110,6 +110,7 @@ class Veginfo extends StatelessWidget {
                                 width: 80,
                                 child: Icon(CupertinoIcons.heart,color: Colors.grey.shade600),
                                 decoration: BoxDecoration(
+                                  color: Colors.white,
                                     border: Border.all(color: Colors.grey.shade400),
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(10))),

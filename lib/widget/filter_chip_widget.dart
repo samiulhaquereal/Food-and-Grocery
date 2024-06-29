@@ -9,46 +9,51 @@ class FilterChipWidget extends StatefulWidget {
   State<FilterChipWidget> createState() => _FilterChipWidgetState();
 }
 
-class Friend {
+class Item {
   String label;
   Color color;
   bool isSelected;
 
-  Friend(this.label, this.color, this.isSelected);
+  Item(this.label, this.color, this.isSelected);
 }
 
 class _FilterChipWidgetState extends State<FilterChipWidget> {
-  List friends = [
-    Friend("Cabbage and lettuce", Colors.white, false),
-    Friend("Cucumber and tomato", Colors.white, false),
-    Friend("Onions and garlic", Colors.white, false),
-    Friend("Peppers", Colors.white, false),
+  List items = [
+    Item("Cabbage and lettuce", Colors.white, false),
+    Item("Cucumber and tomato", Colors.white, false),
+    Item("Onions and garlic", Colors.white, false),
+    Item("Peppers", Colors.white, false),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 8,
       children: getFilteredFriend(),
     );
   }
 
   List<Widget> getFilteredFriend() {
     List<Widget> chips = [];
-    for (int i = 0; i < friends.length; i++) {
+    for (int i = 0; i < items.length; i++) {
       Widget item = Padding(
         padding: EdgeInsets.symmetric(
           vertical: 5,
-          horizontal: 10,
+          horizontal: 5,
         ),
         child: FilterChip(
-          label: Text(friends[i].label),
-          labelStyle: TextStyle(color: Colors.deepPurple),
-          backgroundColor: friends[i].color,
-          selected: friends[i].isSelected,
+          side: BorderSide(color: Colors.transparent),
+          checkmarkColor: Colors.deepPurple,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+            side: BorderSide.none,// Adjust the radius as needed
+          ),
+          label: Text(items[i].label),
+          labelStyle:  items[i].isSelected ? TextStyle(color: Colors.deepPurple) : TextStyle(color:  Colors.grey.shade500),
+          backgroundColor: items[i].color,
+          selected: items[i].isSelected,
           onSelected: (value) {
             setState(() {
-              friends[i].isSelected = value;
+              items[i].isSelected = value;
             });
           },
         ),

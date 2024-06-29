@@ -20,6 +20,7 @@ class _VegetablesState extends State<Vegetables> {
     TextEditingController search = TextEditingController();
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFF6F5F5),
         body: Stack(
           children: [
             Positioned(
@@ -138,6 +139,7 @@ class _VegetablesState extends State<Vegetables> {
                                                 width: 78,
                                                 child: Icon(CupertinoIcons.heart,color: Colors.grey.shade500),
                                                 decoration: BoxDecoration(
+                                                  color: Colors.white,
                                                     border: Border.all(
                                                         color: Colors.grey.shade400),
                                                     borderRadius:

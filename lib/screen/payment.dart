@@ -57,7 +57,9 @@ class _PaymentPageState extends State<PaymentPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFF6F5F5),
         appBar: AppBar(
+          backgroundColor: Color(0xFFF6F5F5),
           leading: IconButton(
             onPressed: () => Get.back(),
             icon: Icon(CupertinoIcons.back, color: Color(0xFF2d0c57)),
